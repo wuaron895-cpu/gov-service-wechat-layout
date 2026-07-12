@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """apply_theme_color.py — 把模板里的占位主题色 #ff6d4d 替换为本篇主题色。
 
-仅替换占位主题色 #ff6146/#ff6d4d（大小写不敏感）；警示红 #ff0000、正确绿 #2E9E5B 不动。
+仅替换占位主题色 #ff6146/#ff6d4d（大小写不敏感）；**警示红 #ff0000 与 正确蓝 #5f9cef 不动**（固定语义色）。
 用法：
-    python apply_theme_color.py --input template-C-guide.md.html --color #5f9cef
+    python apply_theme_color.py --input template-C-guide.md.html --color #be5960
     python apply_theme_color.py --input in.html --color 5f9cef --output out.html
     python apply_theme_color.py --list
 """
@@ -14,14 +14,13 @@ import sys
 # 占位主题色（仅这些会被替换）
 BRAND_PLACEHOLDERS = ("#ff6d4d",)
 # 固定语义色（绝不替换）
-FIXED = ("#ff0000", "#2e9e5b")
+FIXED = ("#ff0000", "#5f9cef")
 
 CANDIDATES = {
     "#ff6d4d": "橙红 — 默认/通用（指南、答疑）",
     "#be5960": "玫红 — 政策解读（沉稳）",
     "#ff8587": "粉红 — 新政/温和话题",
     "#fa6729": "橙 — 互动答疑（活泼）",
-    "#5f9cef": "蓝 — 案例警示（冷静理性）",
     "无": "黑白 — 通知公告（公文，不设主题色）",
 }
 
@@ -38,7 +37,7 @@ def normalize(hexstr: str) -> str:
 def main():
     ap = argparse.ArgumentParser(description="替换模板占位主题色为本篇主题色")
     ap.add_argument("--input", help="输入 HTML 模板路径")
-    ap.add_argument("--color", help="本篇主题色，如 #5f9cef")
+    ap.add_argument("--color", help="本篇主题色，如 #be5960")
     ap.add_argument("--output", help="输出路径（默认覆盖 --input）")
     ap.add_argument("--list", action="store_true", help="列出主题色候选库")
     args = ap.parse_args()
@@ -54,7 +53,7 @@ def main():
 
     new_color = normalize(args.color)
     if new_color in FIXED:
-        sys.exit(f"✗ {new_color} 是固定语义色，不能用作主题色（警示红/正确绿不可换）")
+        sys.exit(f"✗ {new_color} 是固定语义色，不能用作主题色（警示红 #ff0000 / 正确蓝 #5f9cef 不可换）")
 
     with open(args.input, "r", encoding="utf-8") as f:
         text = f.read()
@@ -71,7 +70,7 @@ def main():
         f.write(text)
 
     print(f"✓ 替换 {total} 处 #ff6d4d → {new_color}")
-    print(f"  警示红 #ff0000 / 正确绿 #2E9E5B 未改动")
+    print(f"  警示红 #ff0000 / 正确蓝 #5f9cef 未改动（固定语义色）")
     print(f"  输出: {out_path}")
 
 

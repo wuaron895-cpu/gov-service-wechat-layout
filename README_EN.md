@@ -3,8 +3,8 @@
 A WorkBuddy skill that lays out WeChat official-account articles for public-service / government-affairs accounts (social security, medical insurance, housing fund, tax, civil affairs, public security, etc.).
 
 ## What it gives you
-- **Six content-type layout templates**: myth-busting / policy explainer, new-policy explainer, notice/announcement, how-to guide, cautionary case, Q&A.
-- **A swappable theme-color model**: one per-article theme color + fixed warning-red and correct-green.
+- **Nine content-type layout templates**: myth-busting / policy explainer, new-policy explainer, notice/announcement, how-to guide, cautionary case, Q&A, event/campaign recap, year-in-review, route/collection.
+- **A swappable theme-color model**: one per-article theme color + two fixed semantic colors (warning-red, correct-blue).
 - Templates use **inline styles only** — paste directly into the WeChat editor, formatting preserved, **no 135 editor required**.
 
 ## Install
@@ -20,9 +20,9 @@ It picks the matching template, applies the theme color, fills placeholders, and
 
 ## Recolor
 ```bash
-python scripts/apply_theme_color.py --input assets/template-C-guide.md.html --color 5f9cef
+python scripts/apply_theme_color.py --input assets/template-C-guide.md.html --color be5960
 ```
-Or find-replace `#ff6d4d` in any template (keep `#ff0000` and `#2E9E5B` fixed).
+Or find-replace `#ff6d4d` in any template (keep `#ff0000` and `#5f9cef` fixed).
 
 ## Placeholders
 Replace before publishing: `{{IP名}} {{城市}} {{热线}} {{公众号名}} {{机构全称}}`, plus per-article `【…】` content slots.
