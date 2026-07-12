@@ -5,7 +5,7 @@ A WorkBuddy skill that lays out WeChat official-account articles for public-serv
 ## What it gives you
 - **Nine content-type layout templates**: myth-busting / policy explainer, new-policy explainer, notice/announcement, how-to guide, cautionary case, Q&A, event/campaign recap, year-in-review, route/collection.
 - **A swappable theme-color model**: one per-article theme color + two fixed semantic colors (warning-red, correct-blue).
-- Templates use **inline styles only** — paste directly into the WeChat editor, formatting preserved, **no 135 editor required**.
+- Templates use **inline styles only** — paste directly into the WeChat editor, formatting preserved, **no 135 editor required**. Note: reminder cards use a `<table>` wrapper instead of `<div>` because WeChat editor strips `border` from `<div>` but keeps table borders.
 
 ## Install
 Unzip into `~/.workbuddy/skills/` (Windows: `C:\Users\<you>\.workbuddy\skills\`), then restart WorkBuddy.
