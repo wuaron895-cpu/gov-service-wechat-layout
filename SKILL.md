@@ -2,7 +2,7 @@
 name: gov-service-wechat-layout
 description: 民生政务公众号排版：9类内容模板+可换主题色，纯内联样式粘贴即发、不强制135。触发：社保/政务公众号排版、套用模板、换色。
 agent_created: true
-version: v2.0.0
+version: v2.1.0
 ---
 
 # 民生政务公众号 · 排版模板
@@ -36,8 +36,8 @@ If a piece fits two types, choose the one matching its primary purpose (e.g. a n
 Use four color roles, but distinguish signals by **form, not just hue** — so a single theme color never reads as "all red". See `references/color-slot-model.md` for the full spec.
 
 - 主题色 brand `#ff6d4d`（A2 默认 `#438EDB` 社保蓝）— **swappable**. Appears in three *distinct forms* so it never collides: (1) **solid bars** = big section dividers — the only full-strength fill, default **text-length** for high-saturation themes; (2) **left-border stripes** on subtitle chips / content boxes; (3) **inline bold words** = content emphasis. Structural only.
-- 子标题芯片 — neutral `#F5F6F8` background, **light-red bold text `#E0494D`**, theme left-border stripe. Reads as a "label", not scattered red text.
-- 警示红 warn `#ff0000` — **fixed**; used as inline red emphasis (❎ 错误认知 label, 红字关键词) and as the **red left-border** on Q&A question chips. The 警示 *box* (请注意/注意/IP郑重提醒) is **not** red-filled: it is a full-width neutral chip (`#F5F6F8` bg + light-red text `#E0494D` + theme left-border) — **form-identical to the 子标题 chip**, distinguished only by its "请注意" text. No ⚠ icon (dropped because body text already uses red, so a red card blended in).
+- 子标题芯片 — neutral `#F5F6F8` background, **light-red bold text `#E0494D`**, theme left-border stripe. Reads as a "label". **Signal lives on the chip; body text beneath stays plain (no box, no color border)** — use inline ✓/❎/• markers to tell items apart.
+- 警示红 warn `#ff0000` — **fixed**; used as inline red emphasis (❎ 错误认知 label, 红字关键词) and as the **red left-border** on Q&A question chips. 警示 / 提醒类（请注意/注意！/IP郑重提醒/温馨提醒/温馨提示）走 **提醒卡**：灰底 `#F5F6F8` + 浅灰细线边框 `1px solid #E5E6EB` + 圆角 `8px`、**无亮色边**；标题浅红字 `#E0494D` + 可选 💡 图标 + 可加主题色下划线（与字异色、`padding-bottom` 留呼吸感），正文深灰纯文本、**不整段/整行同色**。提醒卡与子标题芯片**不同款**（后者满灰底+主题色边）。
 - 正确蓝 correct `#5f9cef` — **fixed**; ✓ correct conclusions / positive findings (可算, 可认定, 正确办理方式). The only off-hue positive signal, naturally distinct.
 
 Pick one theme color per article from the candidate library in `references/color-slot-model.md` (default `#ff6d4d` 橙红；**A2 新政解读默认 `#438EDB` 社保蓝**). To recolor, replace the placeholder theme color in the chosen template (A2: `#438EDB`; others: `#ff6d4d`) with the article's theme color; never replace `#ff0000` or `#5f9cef` (both fixed semantic colors). Run `scripts/apply_theme_color.py --input <file> --color <hex>` to do this deterministically, or instruct the editor to find-replace in 秀米/135's one-click theme-color feature.

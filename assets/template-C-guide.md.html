@@ -1,7 +1,7 @@
 <!-- 社保政务号 · C 办事指南 排版模板（去标识化） -->
 <!-- 主题色插槽：全文查找替换 #ff6d4d 为本篇主题色；警示红 #ff0000 与 正确蓝 #5f9cef 固定（红=警示、蓝=正确），主题色可换 ；大分节标题底色默认满宽，高饱和主题色可改文字长度底（见 component-library.md「小标题底色·宽度模式」）-->
 <!-- 账号占位：{{IP名}} {{城市}} {{热线}} {{公众号名}} {{机构全称}}；内容占位：【…】 -->
-<!-- 小标题底色：大分节(情形/条件)=实底主题色条白字；子标题(一)(二)=浅灰芯片主题色；警示(请注意/注意！)=浅红底红字 -->
+<!-- 小标题底色：大分节(情形/条件)=实底主题色条白字；子标题(一)(二)=浅灰芯片主题色；警示(请注意/注意！)=提醒卡(灰底细线圆角框无亮色边+💡图标+主题色下划线) -->
 
 <!-- ① 头图 -->
 <!-- ② 听全文引导 -->
@@ -13,9 +13,11 @@
 <!-- ④ 引言：IP 人格化 + 上期回顾 -->
 <p style="font-size:15px;line-height:1.8;color:#1F2329;">前段时间<strong style="font-weight:700;color:#ff6d4d;">{{IP名}}</strong>为大家解读了<a href="#" style="color:#ff6d4d;">【上期主题】</a>。<br/>本期<strong style="font-weight:700;color:#ff6d4d;">{{IP名}}</strong>整理了【事项名】填写指南，您只需【对号入座条件】，照着模板填写就对啦~</p>
 
-<!-- ⑤ 关键提示框 -->
-<p style="font-size:16px;line-height:1.8;font-weight:700;color:#E0494D;background:#F5F6F8;padding:5px 10px;border-left:3px solid #ff6d4d;">【XX】请注意</p>
-<p style="font-size:15px;line-height:1.8;color:#1F2329;background:#F5F6F8;padding:10px 12px;border-left:3px solid #ff6d4d;">【关键结论，加粗】。<strong style="font-weight:700;">（文末可下载对应表格）</strong></p>
+<!-- ⑤ 关键提示框（提醒卡） -->
+<div style="background:#F5F6F8;padding:10px 12px;border:1px solid #E5E6EB;border-radius:8px;">
+<p style="font-size:16px;line-height:1.8;font-weight:700;color:#E0494D;margin:0 0 6px;">💡 <span style="border-bottom:2px solid #ff6d4d;padding-bottom:3px;">【XX】请注意</span></p>
+<p style="font-size:15px;line-height:1.8;color:#1F2329;margin:0;">【关键结论，加粗】。<strong style="font-weight:700;">（文末可下载对应表格）</strong></p>
+</div>
 
 <hr style="border:none;border-top:1px solid #E5E6EB;margin:18px 0;"/>
 
@@ -43,8 +45,10 @@
 <p style="font-size:15px;line-height:1.6;font-weight:700;color:#E0494D;background:#F5F6F8;padding:5px 10px;border-left:3px solid #ff6d4d;">（二）线下窗口</p>
 <p style="font-size:15px;line-height:1.8;color:#1F2329;">携带原件至【网点】办理……</p>
 
-<p style="font-size:16px;line-height:1.8;font-weight:700;color:#E0494D;background:#F5F6F8;padding:5px 10px;border-left:3px solid #ff6d4d;">注意！</p>
-<p style="font-size:15px;line-height:1.8;color:#1F2329;">【特殊情形】还须<strong style="font-weight:700;color:#ff0000;">加盖单位公章</strong>，其他情况无需加盖单位公章。</p>
+<div style="background:#F5F6F8;padding:10px 12px;border:1px solid #E5E6EB;border-radius:8px;">
+<p style="font-size:16px;line-height:1.8;font-weight:700;color:#E0494D;margin:0 0 6px;">💡 <span style="border-bottom:2px solid #ff6d4d;padding-bottom:3px;">注意！</span></p>
+<p style="font-size:15px;line-height:1.8;color:#1F2329;margin:0;">【特殊情形】还须<strong style="font-weight:700;color:#ff0000;">加盖单位公章</strong>，其他情况无需加盖单位公章。</p>
+</div>
 
 <!-- ⑧ 二维码下载引导 -->
 <p style="text-align:center;font-size:15px;line-height:1.8;color:#1F2329;">长按识别下方二维码下载<br/><strong style="font-weight:700;">【XX】申请表</strong></p>
