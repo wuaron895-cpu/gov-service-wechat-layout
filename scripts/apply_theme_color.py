@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """apply_theme_color.py — 把模板里的占位主题色 #ff6d4d 替换为本篇主题色。
 
-仅替换占位主题色 #ff6146/#ff6d4d（大小写不敏感）；**警示红 #ff0000 与 正确蓝 #5f9cef 不动**（固定语义色）。
+仅替换占位主题色（#ff6d4d 通用默认 / #438EDB A2 默认，大小写不敏感）；**警示红 #ff0000 与 正确蓝 #5f9cef 不动**（固定语义色）。
 用法：
     python apply_theme_color.py --input template-C-guide.md.html --color #be5960
     python apply_theme_color.py --input in.html --color 5f9cef --output out.html
@@ -12,7 +12,7 @@ import re
 import sys
 
 # 占位主题色（仅这些会被替换）
-BRAND_PLACEHOLDERS = ("#ff6d4d",)
+BRAND_PLACEHOLDERS = ("#ff6d4d", "#438EDB")
 # 固定语义色（绝不替换）
 FIXED = ("#ff0000", "#5f9cef")
 
@@ -21,6 +21,8 @@ CANDIDATES = {
     "#be5960": "玫红 — 政策解读（沉稳）",
     "#ff8587": "粉红 — 新政/温和话题",
     "#fa6729": "橙 — 互动答疑（活泼）",
+    "#438EDB": "社保蓝 — A2 新政解读默认（社保政务号品牌色，与正确蓝 #5f9cef 区分）",
+    "#289DDA": "医保蓝 — 医保类文章备选（国家医保局官方 CHS 字形色）",
     "无": "黑白 — 通知公告（公文，不设主题色）",
 }
 
@@ -69,7 +71,7 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(text)
 
-    print(f"✓ 替换 {total} 处 #ff6d4d → {new_color}")
+    print(f"✓ 替换 {total} 处占位主题色 → {new_color}")
     print(f"  警示红 #ff0000 / 正确蓝 #5f9cef 未改动（固定语义色）")
     print(f"  输出: {out_path}")
 
