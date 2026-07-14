@@ -2,7 +2,7 @@
 name: gov-service-wechat-layout
 description: 民生政务公众号排版：9类内容模板+可换主题色，纯内联样式粘贴即发、不强制135。触发：社保/政务公众号排版、套用模板、换色。
 agent_created: true
-version: v2.1.0
+version: v2.1.2
 ---
 
 # 民生政务公众号 · 排版模板
